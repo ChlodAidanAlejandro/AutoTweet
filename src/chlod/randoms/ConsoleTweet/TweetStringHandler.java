@@ -2,7 +2,7 @@ package chlod.randoms.ConsoleTweet;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 import twitter4j.TwitterException;
 
@@ -154,14 +154,31 @@ public class TweetStringHandler {
 		}
 		if (zone) a = a + "z";
 		DateFormat dateFormat = new SimpleDateFormat(a);
-		Date datessss = new Date();
-		return dateFormat.format(datessss);
+		Calendar datesssss = Calendar.getInstance();
+		int timechange = 0;
+		try {
+			timechange = Integer.parseInt(System.getenv("TIMEZONE"));
+		} catch (NullPointerException | NumberFormatException e) {
+			timechange = 0;
+		}
+		datesssss.add(Calendar.HOUR_OF_DAY, timechange);
+		return dateFormat.format(datesssss.getTime());
 	}
 	
 	public static String getTime() {
+		// create format
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-		Date date = new Date();
-		return "[" + dateFormat.format(date) + "] ";
+		// get date in unix timestamp
+		Calendar date = Calendar.getInstance();
+		int timechange = 0;
+		try {
+			timechange = Integer.parseInt(System.getenv("TIMEZONE"));
+		} catch (NullPointerException | NumberFormatException e) {
+			timechange = 0;
+		}
+		date.add(Calendar.HOUR_OF_DAY, timechange);
+		// format date in log mode
+		return "[" + dateFormat.format(date.getTime()) + "] ";
 	}
 	
 }
