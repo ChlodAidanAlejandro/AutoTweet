@@ -178,11 +178,15 @@ public class ConsoleTweet {
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 		// get date in unix timestamp
 		Calendar date = Calendar.getInstance();
-		if (!System.getenv("TIMEZONE").equals("")) {
-			date.add(Calendar.HOUR_OF_DAY, Integer.parseInt(System.getenv("TIMEZONE")));
+		int timechange = 0;
+		try {
+			timechange = Integer.parseInt(System.getenv("TIMEZONE"));
+		} catch (NullPointerException | NumberFormatException e) {
+			timechange = 0;
 		}
+		date.add(Calendar.HOUR_OF_DAY, timechange);
 		// format date in log mode
-		return "[" + dateFormat.format(date) + "] ";
+		return "[" + dateFormat.format(date.getTime()) + "] ";
 	}
 
 	public static Boolean last(int a, int b) {
