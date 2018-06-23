@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 
@@ -177,7 +177,10 @@ public class ConsoleTweet {
 		// create format
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 		// get date in unix timestamp
-		Date date = new Date();
+		Calendar date = Calendar.getInstance();
+		if (!System.getenv("TIMEZONE").equals("")) {
+			date.add(Calendar.HOUR_OF_DAY, Integer.parseInt(System.getenv("TIMEZONE")));
+		}
 		// format date in log mode
 		return "[" + dateFormat.format(date) + "] ";
 	}

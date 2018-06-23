@@ -19,6 +19,7 @@ TWITTER-CONSUMER_KEY | The consumer key of your Twitter app
 TWITTER-CONSUMER_SECRET | The consumer secret of your Twitter app
 TWITTER-ACCESS_TOKEN | The access token of your Twitter account for the app
 TWITTER-ACCESS_TOKEN_SECRET | The access token secret of your Twitter account for the app
+TIMEZONE | The number of hours to add or subtract from UTC or wherever the server's timezone is. (If server is UTC, and you need PST, set this to -8)
 
 ### Local Method
 To run the program on your local server without using environment variables, add --normal as the last argument and create a file in the same folder named "AutoTweet.cfg"
