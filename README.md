@@ -42,6 +42,8 @@ You then need to dedicate one line each for the following
 
 If you have trailing lines, the program will err.
 
+If you would like the bot to run in a different timezone, you may also set the TIMEZONE environment variable. There is no support for timezones in the configuration file.
+
 ### Execution
 
 AutoTweet works by taking fed arguments and turning it into
