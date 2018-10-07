@@ -1,14 +1,5 @@
 # AutoTweet
-This is basically a fork of ConsoleTweet, but designed specifically for Heroku, since its purpose is to tweet ["Good Morning!" everyday](https://twitter.com/GoodMorningPhST).
-
-Note to creators of other Good Morning accounts: If possible please follow the following:
-
-In reference to the [original account](https://twitter.com/GoodMorningPhST),
-* Use the same display picture (you can modify it to represent your timezone)
-* Use the same banner (you can modify it to represent your timezone)
-* Have fun with theme color.
-* The username should as much as possible be "GoodMorning<TIMEZONE (e.g. GMT, ET, PST, CT)>"
-* The display name should as much as possible have "(UTC +<TIME DIFFERENCE FROM UTC (e.g., +0, -4, +10, -10)>)"
+This is basically a fork of ConsoleTweet, but designed specifically for Heroku, since its purpose is to tweet ["Good Morning!" everyday](https://twitter.com/GoodMorningPhST) (no longer active.)
 
 ## Introduction
 AutoTweet is a Java-based program that integrates with Twitter to send tweets. Since this program was made with Heroku usage in mind, it runs on environment variables, a.k.a. config vars. It can be used on a computer nonetheless, but requires an extra argument.
